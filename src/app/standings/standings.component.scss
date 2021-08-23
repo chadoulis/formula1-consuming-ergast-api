@@ -1,0 +1,58 @@
+/*------------------------------------------*/
+/*   1. Table
+/*------------------------------------------*/
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+  
+table {
+  width: 100%;
+  padding-top: 25px;
+}
+
+.mat-header-cell {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mat-cell, .mat-footer-cell {
+  font-size: 22px;
+}
+
+/*------------------------------------------*/
+/*   3. Links
+/*------------------------------------------*/
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #e10600;
+}
+
+.aclass {
+  color: black;
+}
+
+.aclass:hover {
+  color: #e10600;
+}
+
+/*----------------------------------------------------*/
+/*   4. Color classes for the first three positions
+/*----------------------------------------------------*/
+
+.golden {
+  color: #a17f1a;
+}
+
+.silver {
+  color: #696969;
+}
+
+.bronze {
+  color: #6A3805
+}

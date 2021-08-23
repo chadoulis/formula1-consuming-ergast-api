@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-4 col-lg-3">
+            <div class="avatar">
+                <img src="assets/images/constructors/{{constructorDetails.constructorId}}.jpg" class="avatar__image">
+            </div>
+        </div>
+        <div class="col">
+            <mat-card>
+                <mat-list>
+                    <h1>{{constructorDetails.name}} </h1>
+                    <mat-list-item>
+                        <fa-icon [icon]="faPassport" size="2x"> </fa-icon> &nbsp; <p
+                            style="font-size: 20px; display: inline">{{constructorDetails.nationality}}<br><br></p>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <fa-icon [icon]="faWikipediaW" size="2x"> </fa-icon> &nbsp; <p
+                            style="font-size: 20px; display: inline"><a class="aclass" href="{{constructorDetails.url}}"
+                                target="_blank">{{constructorDetails.url}}</a></p>
+                    </mat-list-item>
+                </mat-list>
+                <h1></h1>
+                <mat-list>
+                    <mat-list-item>
+                        <fa-icon [icon]="faTrophy" size="2x"> </fa-icon> &nbsp; <p
+                            style="font-size: 20px; display: inline">{{ championships }}</p>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+            <h1>Results</h1>
+        </div>
+        <div class="col-3">
+            <mat-form-field appearance="legacy">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="e.g. Bahrain" #input>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+
+                <!-- Circuit Column -->
+                <ng-container matColumnDef="circuitId">
+                    <th mat-header-cell *matHeaderCellDef>Circuit</th>
+                    <td mat-cell *matCellDef="let element"> <a (click)="showMap(element.circuitId)"
+                            [class]="findColor(element.position)">{{element.circuitName}}</a> </td>
+                </ng-container>
+            
+                <!-- Driver Column -->
+                <ng-container matColumnDef="driverId">
+                    <th mat-header-cell *matHeaderCellDef>Driver</th>
+                    <td mat-cell *matCellDef="let element"> 
+                        <a href="/drivers/{{element.driverID}}"  [class]="findColor(element.position)"> {{element.driverGivenName}} {{ element.driverFamilyName }}</a>
+                    </td>
+                </ng-container>
+            
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef>Position</th>
+                    <td mat-cell *matCellDef="let element" [class]="findColor(element.position)"> {{element.position}} </td>
+                </ng-container>
+            
+                <!-- Points Column -->
+                <ng-container matColumnDef="points">
+                    <th mat-header-cell *matHeaderCellDef>Points</th>
+                    <td mat-cell *matCellDef="let element" [class]="findColor(element.position)"> {{element.points}} </td>
+                </ng-container>
+            
+                <!-- Laps Column -->
+                <ng-container matColumnDef="laps">
+                    <th mat-header-cell *matHeaderCellDef>Laps</th>
+                    <td mat-cell *matCellDef="let element" [class]="findColor(element.position)"> {{element.laps}} </td>
+                </ng-container>
+            
+                <!-- Status Column -->
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef>Status</th>
+                    <td mat-cell *matCellDef="let element" [class]="findColor(element.position)"> {{element.status}} </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+            
+              <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" aria-label="Select page of users"></mat-paginator>
+
+         
+        </div>
+    </div>
+</div>

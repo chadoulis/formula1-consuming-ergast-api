@@ -1,0 +1,21 @@
+
+<div class="container"   style="padding-top:25px;">
+    <div class="row">
+        <div *ngFor="let driver of drivers" class="col-12 col-lg-3 col-sm-6">
+            <div class="group-section-wrap">
+                <div class="img color1">
+                    <div class="social-icons">
+                    </div>
+                    <img src="assets/images/drivers/{{ driver.driverId }}.jpg" onerror="this.src='assets/images/inav.png'" alt="" class="rounded-circle">
+                </div>
+                <h4>{{ driver.givenName }} {{ driver.familyName }}</h4>
+                <h5><img src="assets/images/flags/{{ driver.nationality  | lowercase }}.svg" width="25px">&nbsp;&nbsp;{{ driver.nationality }}</h5>
+                <div class="text-md-right">
+                    <a href="javascript:" class="read-more-line" href="drivers/{{ driver.driverId }}" ><span><fa-icon style="color: #7b999e; padding-right: 10px;" [icon]="faInfoCircle" size="lg"></fa-icon></span></a>
+                    <a href="javascript:" class="read-more-line" href="{{ driver.url }}" target="_blank" ><span><fa-icon style="color: #7b999e; padding-right: 10px;" [icon]="faWikipediaW" size="lg"></fa-icon></span></a>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>

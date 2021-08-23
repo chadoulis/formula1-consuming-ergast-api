@@ -1,0 +1,123 @@
+/*------------------------------------------*/
+/*   1. Table
+/*------------------------------------------*/
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+  
+table {
+  width: 100%;
+  padding-top: 25px;
+}
+
+.mat-header-cell {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mat-cell, .mat-footer-cell {
+  font-size: 22px;
+}
+
+
+/*------------------------------------------*/
+/*   2. Avatar
+/*------------------------------------------*/
+
+// colors
+$bgColor: #fff;
+$borderColor: #e10600;
+
+// sizes
+$avatarSize: 200px;
+$borderWidth: 5px;
+$paddingSize: 20px;
+
+// some calculations
+$translateValue: -$paddingSize - $borderWidth;
+
+.avatar {
+  border: $borderWidth solid $bgColor;
+  box-sizing: border-box;
+  height: $avatarSize;
+  border-radius: 50%;
+  position: relative;
+  width: $avatarSize;
+  
+  &__image {
+    width: 100%;
+    border-radius: 50%;
+  }
+  
+  &::before,
+  &::after {
+    border: $borderWidth solid transparent;
+    border-radius: 50%;
+    border-top: $borderWidth solid $borderColor;
+    content:"";
+    display: block;
+    height: calc(100% + 10px);
+    left: 50%;
+    width: calc(100% + 10px);
+    position: absolute;
+  }
+  
+  &::before {
+    top: -2 * $borderWidth;
+    transform: translateX(-50%);
+  }
+  
+  &::after {
+    bottom: -2 * $borderWidth;
+    transform: translateX(-50%) rotate(180deg);
+  }
+}
+
+/*------------------------------------------*/
+/*   3. Links
+/*------------------------------------------*/
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #e10600;
+}
+
+.aclass {
+  color: black;
+}
+
+.aclass:hover {
+  color: #e10600;
+}
+
+/*----------------------------------------------------*/
+/*   4. Color classes for the first three positions
+/*----------------------------------------------------*/
+
+.golden {
+  color: #a17f1a;
+}
+
+.silver {
+  color: #696969;
+}
+
+.bronze {
+  color: #6A3805
+}
+
+/*----------------------------------------------------*/
+/*   5. Containers, rows and columns
+/*----------------------------------------------------*/
+
+.col {
+padding-top: 25px;
+padding-bottom: 25px;
+}
+
+

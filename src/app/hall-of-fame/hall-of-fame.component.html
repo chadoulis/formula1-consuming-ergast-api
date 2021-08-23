@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Championships Hall of Fame</h1>
+        </div>
+        <div class="col" style="text-align: right;">
+            <mat-button-toggle-group [(ngModel)]="showDrivers" aria-label="content">
+                <mat-button-toggle [value]="true" (change)="onValChange($event.value)">Drivers</mat-button-toggle>
+                <mat-button-toggle [value]="false" (change)="onValChange($event.value)">Constructors</mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div #chartDiv style="width: 100%; height: 1000px"></div>
+        </div>
+    </div>
+</div>

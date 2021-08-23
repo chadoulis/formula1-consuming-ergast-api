@@ -1,0 +1,33 @@
+<div class="container" style="padding-top:25px;">
+    <div class="row">
+        <div *ngFor="let constructor of constructors" class="col-12 col-lg-3 col-sm-6">
+            <div class="group-section-wrap">
+                <div class="img color1">
+                    <img src="assets/images/constructors/{{ constructor.constructorId }}.jpg"
+                        onerror="this.src='assets/images/inav.png'" alt="" class="rounded-circle">
+                </div>
+                <h4>
+                    {{ constructor.name }}
+                </h4>
+                <h5>
+                    <img src="assets/images/flags/{{ constructor.nationality  | lowercase }}.svg"
+                        width="25px">&nbsp;&nbsp;{{ constructor.nationality }}
+                </h5>
+                <div class="text-md-right">
+                    <a class="read-more-line" href="constructors/{{ constructor.constructorId }}">
+                        <span>
+                            <fa-icon style="color: #7b999e; padding-right: 10px;" [icon]="faInfoCircle" size="lg">
+                            </fa-icon>
+                        </span>
+                    </a>
+                    <a class="read-more-line" href="{{ constructor.url }}" target="_blank">
+                        <span>
+                            <fa-icon style="color: #7b999e; padding-right: 10px;" [icon]="faWikipediaW" size="lg">
+                            </fa-icon>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
