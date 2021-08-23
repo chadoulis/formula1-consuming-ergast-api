@@ -1,6 +1,7 @@
 # Formula
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0. It consumes the [Ergast Developer Api](https://ergast.com/mrd/) and aims to provide meaningful insight into the historical data of Formula 1.
+
 
 ## Development server
 
